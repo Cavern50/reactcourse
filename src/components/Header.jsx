@@ -4,13 +4,8 @@ import { Link } from "react-router-dom";
 import {useSelector} from "react-redux";
 
 function Header() {
-  console.log()
   const filters = useSelector(({pizzas}) => ({...pizzas}))
-  console.log(filters)
-  const { totalPrice, totalCount } = useSelector(({cart}) => ({
-    totalPrice: cart.totalPrice,
-    totalCount: cart.totalCount,
-  }));
+  const { totalPrice, totalCount } = useSelector(({cart}) => cart);
   return (
     <div className="header">
       <div className="container">
